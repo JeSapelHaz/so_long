@@ -6,12 +6,12 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/20 15:45:35 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/20 18:46:28 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line/get_next_line.h"
-#include "mlx.h"
+#include "mlx/mlx.h"
 #include <fcntl.h>
 #include <limits.h>
 #include <stdarg.h>

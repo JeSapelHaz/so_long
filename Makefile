@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 17:55:40 by hbutt             #+#    #+#              #
-#    Updated: 2024/06/20 15:21:49 by hbutt            ###   ########.fr        #
+#    Updated: 2024/06/20 18:45:36 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,13 +23,15 @@ SRCS = main.c \
 OBJS = ${SRCS:.c=.o}
 CC = gcc
 RM = rm -f
+MLXFLAGS := -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLXPATH = ./mlx
 CFLAGS = -Wall -Wextra -Werror
 
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
-	${CC} -o ${NAME} ${OBJS}
+	${CC} -o ${NAME} ${OBJS} $(MLXFLAGS)
 
 all: ${NAME}
 
