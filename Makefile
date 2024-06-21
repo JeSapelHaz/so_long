@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 17:55:40 by hbutt             #+#    #+#              #
-#    Updated: 2024/06/20 18:45:36 by hbutt            ###   ########.fr        #
+#    Updated: 2024/06/21 16:48:35 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS = main.c \
 			check_args.c \
 			read_map.c \
 			init_map.c \
+			display.c \
 			utils.c \
 			get_next_line/get_next_line.c \
 			get_next_line/get_next_line_utils.c

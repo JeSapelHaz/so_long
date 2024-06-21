@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/20 18:46:28 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/21 16:47:31 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#define TILE_SIZE 64
 
 typedef struct s_map
 {
@@ -37,6 +39,9 @@ t_map		read_map(t_map map);
 
 /* Init map */
 t_map		init_map(t_map map);
+
+/* Display */
+void display_map(t_map map, void *mlx, void *window);
 
 /* Utils */
 void		ft_error(char *msg);
