@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   close.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 13:43:22 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/22 16:53:25 by hbutt            ###   ########.fr       */
+/*   Created: 2024/06/22 18:36:09 by hbutt             #+#    #+#             */
+/*   Updated: 2024/06/22 18:39:11 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_map	read_map(t_map map)
+void close_window(t_map *map)
 {
-	int fd;
-	char *line;
-
-	fd = open("generator/maps/map.ber", O_RDONLY);
-	line = get_next_line(fd);
-	map.columns = ft_strlen(line);
-	while (line)
-	{
-		if (map.columns != ft_strlen(line))
-			ft_error("Error : Longueur des lignes ne sont pas les mêmes");
-		map.lines++;
-		line = get_next_line(fd);
-	}
-	map.columns--;
-	free(line);
-	return (map);
+	mlx_clear_window(map->mlx, map->window);
+	mlx_destroy_window(map->mlx, map->window);
+	exit(0);
 }

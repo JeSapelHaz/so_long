@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/21 16:47:31 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/22 19:37:37 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,15 @@
 
 typedef struct s_map
 {
+	void	*mlx;
+	void	*window;
+	char	*name;
 	char	**full;
 	int		lines;
 	int		columns;
-	char	*name;
-
+	int		nbr_collec;
+	int		pos_x;
+	int		pos_y;
 }			t_map;
 
 /* Check args */
@@ -38,10 +42,30 @@ void		check_args(int ac, char **av);
 t_map		read_map(t_map map);
 
 /* Init map */
+t_map		info_map(t_map map);
 t_map		init_map(t_map map);
 
 /* Display */
-void display_map(t_map map, void *mlx, void *window);
+void		display_map(t_map *map, void *mlx, void *window);
+
+/* Display tiles */
+void		display_wall(void *mlx, void *window, int j, int i);
+void		display_floor(void *mlx, void *window, int j, int i);
+void		display_exit(void *mlx, void *window, int j, int i);
+void		display_collec(void *mlx, void *window, int j, int i);
+void		display_player(void *mlx, void *window, int j, int i);
+
+/* Can or not */
+int			can_up(t_map *map);
+int			can_down(t_map *map);
+int			can_right(t_map *map);
+int			can_left(t_map *map);
+
+/* Moves */
+int			controls(int keycode, t_map *map);
+
+/* Close */
+void		close_window(t_map *map);
 
 /* Utils */
 void		ft_error(char *msg);
