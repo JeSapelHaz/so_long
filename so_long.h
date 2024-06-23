@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/22 19:37:37 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/23 20:57:43 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		check_args(int ac, char **av);
 t_map		read_map(t_map map);
 
 /* Init map */
-t_map		info_map(t_map map);
+void		info_map(t_map *map);
 t_map		init_map(t_map map);
 
 /* Display */
@@ -70,3 +70,4 @@ void		close_window(t_map *map);
 /* Utils */
 void		ft_error(char *msg);
 int			ft_strlen(const char *str);
+void ft_you_win();

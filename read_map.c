@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 13:43:22 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/22 16:53:25 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/23 21:45:18 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_map	read_map(t_map map)
 	int fd;
 	char *line;
 
-	fd = open("generator/maps/map.ber", O_RDONLY);
+	fd = open(map.name, O_RDONLY);
 	line = get_next_line(fd);
 	map.columns = ft_strlen(line);
 	while (line)

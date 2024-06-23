@@ -19,7 +19,7 @@ t_map	init_map(t_map map)
 	char	*line;
 
 	i = 0;
-	fd = open("generator/maps/map.ber", O_RDONLY);
+	fd = open(map.name, O_RDONLY);
 	map.full = malloc(sizeof(char *) * map.lines);
 	line = get_next_line(fd);
 	while (line)
@@ -33,27 +33,60 @@ t_map	init_map(t_map map)
 	return (map);
 }
 
-// t_map	info_map(t_map map)
-// {
-// 	int i;
-// 	int j;
-// 	int nbr_player;
+void	check_map(t_map map)
+{
+	int	i;
 
-// 	i = -1;
-// 	nbr_player = 0;
-// 	while (++i < map.lines)
-// 	{
-// 		j = -1;
-// 		while (++j < map.columns)
-// 		{
-// 			if (map.full[i][j] == 'C')
-// 				map.nbr_collec++;
-// 			if (map.full[i][j] == 'P')
-// 			{
-// 				map.pos_x = 2;
-// 				map.pos_y = 2;
-// 			}
-// 		}
-// 	}
-// 	return (map);
-// }
+	i = -1;
+	while (map.full[0][++i])
+	{
+		if (map.full[0][i] != 1)
+			ft_error("Tu veux me piéger chef ?");
+	}
+	i = 0;
+	while (map.full[i++][map.columns])
+	{
+		if (map.full[i][map.columns] != 1)
+			ft_error("Tu veux me piéger chef ?");
+	}
+	i =0;
+	while (map.full[++i][0])
+	{
+		if (map.full[0][i] != 1)
+			ft_error("Tu veux me piéger chef ?");
+	}
+	i =0;
+	while (map.full[map.lines][++i])
+	{
+		if (map.full[map.lines][i] != 1)
+			ft_error("Tu veux me piéger chef ?");
+	}
+
+}
+
+void	info_map(t_map *map)
+{
+	int i;
+	int j;
+	int nbr_player;
+
+	i = -1;
+	nbr_player = 0;
+	while (++i < map->lines)
+	{
+		j = -1;
+		while (++j < map->columns)
+		{
+			if (map->full[i][j] == 'C')
+				map->nbr_collec++;
+			if (map->full[i][j] == 'P')
+			{
+				nbr_player++;
+				if (nbr_player > 1)
+					ft_error("Il y a pas encore le multi chef");
+				map->pos_x = i;
+				map->pos_y = j;
+			}
+		}
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 16:41:27 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/22 19:38:03 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/23 20:46:13 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,11 @@ void	display_map(t_map *map, void *mlx, void *window)
 			if (map->full[i][j] == 'C')
 			{
 				display_collec(mlx, window, j, i);
-				map->nbr_collec++;
 			}
 			if (map->full[i][j] == 'P')
 			{
 				display_floor(mlx, window, j, i);
 				display_player(mlx, window, j, i);
-				map->pos_x = i;
-				map->pos_y = j;
 			}
 			if (map->full[i][j] == 'E')
 				display_exit(mlx, window, j, i);
