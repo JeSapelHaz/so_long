@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 15:53:59 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/23 20:57:32 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/23 21:50:03 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	move_up(t_map *map)
 {
+	write(1, "moves\n", 6);
 	if (map->full[map->pos_x - 1][map->pos_y] == 'C')
 		map->nbr_collec--;
 	if (map->full[map->pos_x - 1][map->pos_y] == 'E')

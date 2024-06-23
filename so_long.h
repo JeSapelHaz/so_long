@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/23 20:57:43 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/06/23 21:48:19 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_map
 	int		nbr_collec;
 	int		pos_x;
 	int		pos_y;
+	int moves;
 }			t_map;
 
 /* Check args */
