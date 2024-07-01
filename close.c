@@ -6,13 +6,13 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 18:36:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/22 18:39:11 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/01 14:10:43 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void close_window(t_map *map)
+void	close_window(t_map *map)
 {
 	mlx_clear_window(map->mlx, map->window);
 	mlx_destroy_window(map->mlx, map->window);

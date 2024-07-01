@@ -49,26 +49,25 @@ void	check_map(t_map map)
 		if (map.full[i][map.columns] != 1)
 			ft_error("Tu veux me piéger chef ?");
 	}
-	i =0;
+	i = 0;
 	while (map.full[++i][0])
 	{
 		if (map.full[0][i] != 1)
 			ft_error("Tu veux me piéger chef ?");
 	}
-	i =0;
+	i = 0;
 	while (map.full[map.lines][++i])
 	{
 		if (map.full[map.lines][i] != 1)
 			ft_error("Tu veux me piéger chef ?");
 	}
-
 }
 
 void	info_map(t_map *map)
 {
-	int i;
-	int j;
-	int nbr_player;
+	int	i;
+	int	j;
+	int	nbr_player;
 
 	i = -1;
 	nbr_player = 0;

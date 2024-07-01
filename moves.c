@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 15:53:59 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/23 21:50:03 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/01 14:37:10 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,98 @@
 
 void	move_up(t_map *map)
 {
-	write(1, "moves\n", 6);
+	map->moves++;
+	ft_printf("Nombre de mouvements : %d\n", map->moves);
 	if (map->full[map->pos_x - 1][map->pos_y] == 'C')
 		map->nbr_collec--;
-	if (map->full[map->pos_x - 1][map->pos_y] == 'E')
+	if (map->full[map->pos_x - 1][map->pos_y] == 'E' && map->nbr_collec == 0)
 		ft_you_win();
+	if (map->full[map->pos_x - 1][map->pos_y] == 'E' && map->nbr_collec > 0)
+	{
+		map->full[map->pos_x][map->pos_y] = '0';
+		map->full[map->pos_x - 2][map->pos_y] = 'P';
+		refresh_display(map, map->pos_x, map->pos_y);
+		refresh_display(map, map->pos_x - 2, map->pos_y);
+		map->pos_x = map->pos_x - 2;
+		return ;
+	}
 	map->full[map->pos_x][map->pos_y] = '0';
 	map->full[map->pos_x - 1][map->pos_y] = 'P';
+	refresh_display(map, map->pos_x, map->pos_y);
+	refresh_display(map, map->pos_x - 1, map->pos_y);
 	map->pos_x--;
-	display_map(map, map->mlx, map->window);
 }
+
 void	move_down(t_map *map)
 {
+	map->moves++;
+	ft_printf("Nombre de mouvements : %d\n", map->moves);
 	if (map->full[map->pos_x + 1][map->pos_y] == 'C')
 		map->nbr_collec--;
-	if (map->full[map->pos_x + 1][map->pos_y] == 'E')
+	if (map->full[map->pos_x + 1][map->pos_y] == 'E' && map->nbr_collec == 0)
 		ft_you_win();
+	if (map->full[map->pos_x + 1][map->pos_y] == 'E' && map->nbr_collec > 0)
+	{
+		map->full[map->pos_x][map->pos_y] = '0';
+		map->full[map->pos_x + 2][map->pos_y] = 'P';
+		refresh_display(map, map->pos_x, map->pos_y);
+		refresh_display(map, map->pos_x + 2, map->pos_y);
+		map->pos_x = map->pos_x + 2;
+		return ;
+	}
 	map->full[map->pos_x][map->pos_y] = '0';
 	map->full[map->pos_x + 1][map->pos_y] = 'P';
+	refresh_display(map, map->pos_x, map->pos_y);
+	refresh_display(map, map->pos_x + 1, map->pos_y);
 	map->pos_x++;
-	display_map(map, map->mlx, map->window);
 }
+
 void	move_right(t_map *map)
 {
+	map->moves++;
+	ft_printf("Nombre de mouvements : %d\n", map->moves);
 	if (map->full[map->pos_x][map->pos_y + 1] == 'C')
 		map->nbr_collec--;
-	if (map->full[map->pos_x][map->pos_y + 1] == 'E')
+	if (map->full[map->pos_x][map->pos_y + 1] == 'E' && map->nbr_collec == 0)
 		ft_you_win();
+	if (map->full[map->pos_x][map->pos_y + 1] == 'E' && map->nbr_collec > 0)
+	{
+		map->full[map->pos_x][map->pos_y] = '0';
+		map->full[map->pos_x][map->pos_y + 2] = 'P';
+		refresh_display(map, map->pos_x, map->pos_y);
+		refresh_display(map, map->pos_x, map->pos_y + 2);
+		map->pos_y = map->pos_y + 2;
+		return ;
+	}
 	map->full[map->pos_x][map->pos_y] = '0';
 	map->full[map->pos_x][map->pos_y + 1] = 'P';
+	refresh_display(map, map->pos_x, map->pos_y);
+	refresh_display(map, map->pos_x, map->pos_y + 1);
 	map->pos_y++;
-	display_map(map, map->mlx, map->window);
 }
+
 void	move_left(t_map *map)
 {
+	map->moves++;
+	ft_printf("Nombre de mouvements : %d\n", map->moves);
 	if (map->full[map->pos_x][map->pos_y - 1] == 'C')
 		map->nbr_collec--;
-	if (map->full[map->pos_x][map->pos_y - 1] == 'E')
+	if (map->full[map->pos_x][map->pos_y - 1] == 'E' && map->nbr_collec == 0)
 		ft_you_win();
+	if (map->full[map->pos_x][map->pos_y - 1] == 'E' && map->nbr_collec > 0)
+	{
+		map->full[map->pos_x][map->pos_y] = '0';
+		map->full[map->pos_x][map->pos_y - 2] = 'P';
+		refresh_display(map, map->pos_x, map->pos_y);
+		refresh_display(map, map->pos_x, map->pos_y - 2);
+		map->pos_y = map->pos_y - 2;
+		return ;
+	}
 	map->full[map->pos_x][map->pos_y] = '0';
 	map->full[map->pos_x][map->pos_y - 1] = 'P';
+	refresh_display(map, map->pos_x, map->pos_y);
+	refresh_display(map, map->pos_x, map->pos_y - 1);
 	map->pos_y--;
-	display_map(map, map->mlx, map->window);
 }
 
 int	controls(int keycode, t_map *map)

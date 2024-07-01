@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:24:11 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/23 21:51:46 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/01 15:20:52 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,18 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
+void	ft_message(char *msg)
+{
+	int	len;
+
+	len = ft_strlen(msg);
+	write(1, msg, len);
+	write(1, "\n", 1);
+}
+
 void	ft_error(char *msg)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(msg);
 	write(1, msg, len);
@@ -32,7 +41,7 @@ void	ft_error(char *msg)
 	exit(1);
 }
 
-void ft_you_win()
+void	ft_you_win(void)
 {
 	write(1, "YOU WIN\n", 8);
 	exit(0);

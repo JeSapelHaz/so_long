@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 13:43:22 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/01 14:13:51 by hbutt            ###   ########.fr       */
+/*   Created: 2024/04/28 18:38:32 by hbutt             #+#    #+#             */
+/*   Updated: 2024/07/01 14:33:50 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-t_map	read_map(t_map map)
+size_t	ft_putchar(char c)
 {
-	int		fd;
-	char	*line;
+	return (write(1, &c, 1));
+}
 
-	fd = open(map.name, O_RDONLY);
-	line = get_next_line(fd);
-	map.columns = ft_strlen(line);
-	while (line)
-	{
-		if (map.columns != ft_strlen(line))
-			ft_error("Error : Longueur des lignes ne sont pas les mêmes");
-		map.lines++;
-		line = get_next_line(fd);
-	}
-	map.columns--;
-	free(line);
-	return (map);
+size_t	ft_strlen_2(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
+}
+
+size_t	ft_putstr(const char *str)
+{
+	int	len;
+
+	if (!str)
+		return (write(1, "(null)", 6));
+	len = ft_strlen_2(str);
+	return (write(1, str, len));
 }

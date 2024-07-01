@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:09:46 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/19 15:47:07 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/01 14:10:41 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (0);
 }
 
-void check_args(int ac, char **av)
+void	check_args(int ac, char **av)
 {
 	if (ac < 2)
 		ft_error("Error : Pas de map");

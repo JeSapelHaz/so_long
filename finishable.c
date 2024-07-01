@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   finishable.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 13:43:22 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/01 14:13:51 by hbutt            ###   ########.fr       */
+/*   Created: 2024/06/29 15:03:13 by hbutt             #+#    #+#             */
+/*   Updated: 2024/07/01 14:16:31 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_map	read_map(t_map map)
+void is_finishable(t_map map)
 {
-	int		fd;
-	char	*line;
+	int i;
 
-	fd = open(map.name, O_RDONLY);
-	line = get_next_line(fd);
-	map.columns = ft_strlen(line);
-	while (line)
+	i = 0;
+	while (i < map.columns)
 	{
-		if (map.columns != ft_strlen(line))
-			ft_error("Error : Longueur des lignes ne sont pas les mêmes");
-		map.lines++;
-		line = get_next_line(fd);
+			
 	}
-	map.columns--;
-	free(line);
-	return (map);
 }

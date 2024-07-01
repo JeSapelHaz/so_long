@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 14:34:41 by hbutt             #+#    #+#             */
-/*   Updated: 2024/06/22 19:00:41 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/01 14:11:51 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ void	display_player(void *mlx, void *window, int j, int i)
 	mlx_put_image_to_window(mlx, window, img_player, j * TILE_SIZE, i
 		* TILE_SIZE);
 }
+
 void	display_exit(void *mlx, void *window, int j, int i)
 {
-	int img_height;
-	void *img_exit;
+	int		img_height;
+	void	*img_exit;
 
 	img_height = TILE_SIZE;
 	img_exit = mlx_xpm_file_to_image(mlx, "images/exit.xpm", &img_height,
