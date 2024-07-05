@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 14:34:41 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/01 14:11:51 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/05 17:22:29 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	display_wall(void *mlx, void *window, int j, int i)
 	void	*img_wall;
 
 	img_height = TILE_SIZE;
-	img_wall = mlx_xpm_file_to_image(mlx, "images/wall.xpm", &img_height,
+	img_wall = mlx_xpm_file_to_image(mlx, "images/wall_2.xpm", &img_height,
 			&img_height);
 	mlx_put_image_to_window(mlx, window, img_wall, j * TILE_SIZE, i
 		* TILE_SIZE);
@@ -30,7 +30,7 @@ void	display_floor(void *mlx, void *window, int j, int i)
 	void	*img_floor;
 
 	img_height = TILE_SIZE;
-	img_floor = mlx_xpm_file_to_image(mlx, "images/floor.xpm", &img_height,
+	img_floor = mlx_xpm_file_to_image(mlx, "images/floor_2.xpm", &img_height,
 			&img_height);
 	mlx_put_image_to_window(mlx, window, img_floor, j * TILE_SIZE, i
 		* TILE_SIZE);
@@ -42,7 +42,8 @@ void	display_collec(void *mlx, void *window, int j, int i)
 	void	*img_collec;
 
 	img_height = TILE_SIZE;
-	img_collec = mlx_xpm_file_to_image(mlx, "images/collec.xpm", &img_height,
+	img_height /= 7;
+	img_collec = mlx_xpm_file_to_image(mlx, "images/burger.xpm", &img_height,
 			&img_height);
 	mlx_put_image_to_window(mlx, window, img_collec, j * TILE_SIZE, i
 		* TILE_SIZE);

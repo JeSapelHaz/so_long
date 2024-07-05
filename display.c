@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 16:41:27 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/01 14:11:33 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/04 15:56:21 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,13 @@ void	refresh_display(t_map *map, int i, int j)
 	}
 	if (map->full[i][j] == 'E')
 		display_exit(map->mlx, map->window, j, i);
+}
+
+void	refresh_movements(t_map *map)
+{
+	display_wall(map->mlx, map->window, 0, 0);
+	display_wall(map->mlx, map->window, 1, 0);
+	display_wall(map->mlx, map->window, 2, 0);
+	display_wall(map->mlx, map->window, 3, 0);
+	display_wall(map->mlx, map->window, 4, 0);
 }

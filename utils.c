@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:24:11 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/01 15:20:52 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/05 15:44:53 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@ int	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 void	ft_message(char *msg)
@@ -41,8 +55,4 @@ void	ft_error(char *msg)
 	exit(1);
 }
 
-void	ft_you_win(void)
-{
-	write(1, "YOU WIN\n", 8);
-	exit(0);
-}
+
