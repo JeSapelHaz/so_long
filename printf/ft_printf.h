@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:03 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/01 14:33:26 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/08 16:14:23 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ size_t	ft_putnbr_base(unsigned long int nbr, const char *base);
 
 /* utils.c */
 size_t	ft_putchar(char c);
-size_t	ft_strlen_2(const char *str);
+size_t	ft_strlen_3(const char *str);
 size_t	ft_putstr(const char *str);
 #endif

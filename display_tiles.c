@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 14:34:41 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/06 16:27:23 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:33:45 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,18 @@ void	display_collec(void *mlx, void *window, int j, int i)
 		* TILE_SIZE);
 }
 
-void	display_player(void *mlx, void *window, int j, int i)
+void	display_player(t_map *map, int j, int i)
 {
-	int		img_height;
-	void	*img_player;
+	int	img_height;
 
 	img_height = TILE_SIZE;
-	img_player = mlx_xpm_file_to_image(mlx, "images/player.xpm", &img_height,
-			&img_height);
-	mlx_put_image_to_window(mlx, window, img_player, j * TILE_SIZE, i
-		* TILE_SIZE);
+	if (!map->img_player)
+	{
+		map->img_player = mlx_xpm_file_to_image(map->mlx, "images/player.xpm",
+				&img_height, &img_height);
+	}
+	mlx_put_image_to_window(map->mlx, map->window, map->img_player, j
+		* TILE_SIZE, i * TILE_SIZE);
 }
 
 void	display_exit(void *mlx, void *window, int j, int i)

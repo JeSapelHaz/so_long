@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 16:41:27 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/06 16:34:32 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/08 15:32:50 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	display_map(t_map *map, void *mlx, void *window)
 			if (map->full[i][j] == 'P')
 			{
 				display_floor(mlx, window, j, i);
-				display_player(mlx, window, j, i);
+				display_player(map, j, i);
 			}
 			if (map->full[i][j] == 'E')
 				display_exit(map->mlx, map->window, j, i);
@@ -52,7 +52,7 @@ void	refresh_display(t_map *map, int i, int j)
 	if (map->full[i][j] == 'P')
 	{
 		display_floor(map->mlx, map->window, j, i);
-		display_player(map->mlx, map->window, j, i);
+		display_player(map, j, i);
 	}
 	if (map->full[i][j] == 'E')
 	{
@@ -68,4 +68,6 @@ void	refresh_movements(t_map *map)
 	display_wall(map->mlx, map->window, 2, 0);
 	display_wall(map->mlx, map->window, 3, 0);
 	display_wall(map->mlx, map->window, 4, 0);
+	display_wall(map->mlx, map->window, 5, 0);
+	display_wall(map->mlx, map->window, 6, 0);
 }

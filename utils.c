@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 14:24:11 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/06 16:40:15 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/08 16:17:17 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,17 @@ int	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	ft_strlen_2(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0' && str[i] != '\n')
 		i++;
 	return (i);
 }

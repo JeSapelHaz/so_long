@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 17:55:40 by hbutt             #+#    #+#              #
-#    Updated: 2024/07/06 16:40:07 by hbutt            ###   ########.fr        #
+#    Updated: 2024/07/08 15:09:16 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = main.c \
        close.c \
        utils_moves.c \
        utils.c \
+       change_player.c \
        ft_win.c \
        controls.c \
        finishable.c \

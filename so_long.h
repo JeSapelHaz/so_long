@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/06 16:41:50 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/08 16:32:43 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ typedef struct s_map
 	int			pos_y;
 	int			moves;
 	int			win;
+	void		*img_player;
 }				t_map;
+
 // Définition de la structure des objets
 typedef struct s_objects
 {
@@ -74,7 +76,10 @@ void			display_wall(void *mlx, void *window, int j, int i);
 void			display_floor(void *mlx, void *window, int j, int i);
 void			display_exit(void *mlx, void *window, int j, int i);
 void			display_collec(void *mlx, void *window, int j, int i);
-void			display_player(void *mlx, void *window, int j, int i);
+void			display_player(t_map *map, int j, int i);
+
+/* Change player */
+void			change_player(t_map *map);
 
 /* Can or not */
 int				can_up(t_map *map);
@@ -84,13 +89,13 @@ int				can_left(t_map *map);
 
 /* Controls */
 int				controls(int keycode, t_map *map);
-void	moves_u(t_map *map, int direction);
+void			moves_u(t_map *map, int direction);
 
 /* Moves */
-void	move_right(t_map *map);
-void	move_down(t_map *map);
-void	move_up(t_map *map);
-void	move_left(t_map *map);
+void			move_right(t_map *map);
+void			move_down(t_map *map);
+void			move_up(t_map *map);
+void			move_left(t_map *map);
 
 /* Close */
 void			close_window(t_map *map);
@@ -98,5 +103,6 @@ void			close_window(t_map *map);
 /* Utils */
 void			ft_error(char *msg);
 int				ft_strlen(const char *str);
+int				ft_strlen_2(const char *str);
 void			ft_you_win(t_map *map);
 char			*ft_strcpy(char *dest, char *src);
