@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 15:45:01 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/05 15:56:01 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/06 16:39:00 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,24 @@ static void	put_images(t_map *map)
 	int		img_height;
 	void	*img_win;
 
-	img_height = TILE_SIZE;
-	img_win = mlx_xpm_file_to_image(map->mlx, "images/YOU_WIN.xpm",
-			&img_height, &img_height);
-	mlx_put_image_to_window(map->mlx, map->window, img_win, 150, 0);
+	img_height = 1;
+	img_win = mlx_xpm_file_to_image(map->mlx, "images/YOU_WIN.xpm", &img_height,
+			&img_height);
+	mlx_put_image_to_window(map->mlx, map->window, img_win, 300, -100);
 	img_win = mlx_xpm_file_to_image(map->mlx, "images/ajit_victory.xpm",
 			&img_height, &img_height);
-	mlx_put_image_to_window(map->mlx, map->window, img_win, 10, 10);
+	mlx_put_image_to_window(map->mlx, map->window, img_win, -150, 0);
 	img_win = mlx_xpm_file_to_image(map->mlx, "images/mathias_victory.xpm",
 			&img_height, &img_height);
-	mlx_put_image_to_window(map->mlx, map->window, img_win, 400, 10);
-	
+	mlx_put_image_to_window(map->mlx, map->window, img_win, 500, 10);
+	img_win = mlx_xpm_file_to_image(map->mlx, "images/sam_victory.xpm",
+			&img_height, &img_height);
+	mlx_put_image_to_window(map->mlx, map->window, img_win, 0, -110);
+	img_win = mlx_xpm_file_to_image(map->mlx, "images/victory.xpm", &img_height,
+			&img_height);
+	mlx_put_image_to_window(map->mlx, map->window, img_win, 250, 10);
 }
+
 void	ft_you_win(t_map *map)
 {
 	int		img_height;

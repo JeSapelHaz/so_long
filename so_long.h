@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:12:09 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/05 15:43:14 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/06 16:41:50 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,15 @@ int				can_down(t_map *map);
 int				can_right(t_map *map);
 int				can_left(t_map *map);
 
-/* Moves */
+/* Controls */
 int				controls(int keycode, t_map *map);
 void	moves_u(t_map *map, int direction);
+
+/* Moves */
+void	move_right(t_map *map);
+void	move_down(t_map *map);
+void	move_up(t_map *map);
+void	move_left(t_map *map);
 
 /* Close */
 void			close_window(t_map *map);

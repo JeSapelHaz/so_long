@@ -6,7 +6,7 @@
 /*   By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 14:34:41 by hbutt             #+#    #+#             */
-/*   Updated: 2024/07/05 17:22:29 by hbutt            ###   ########.fr       */
+/*   Updated: 2024/07/06 16:27:23 by hbutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	display_collec(void *mlx, void *window, int j, int i)
 
 	img_height = TILE_SIZE;
 	img_height /= 7;
-	img_collec = mlx_xpm_file_to_image(mlx, "images/burger.xpm", &img_height,
+	img_collec = mlx_xpm_file_to_image(mlx, "images/apple.xpm", &img_height,
 			&img_height);
 	mlx_put_image_to_window(mlx, window, img_collec, j * TILE_SIZE, i
 		* TILE_SIZE);

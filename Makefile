@@ -6,7 +6,7 @@
 #    By: hbutt <hbutt@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/18 17:55:40 by hbutt             #+#    #+#              #
-#    Updated: 2024/07/05 15:47:34 by hbutt            ###   ########.fr        #
+#    Updated: 2024/07/06 16:40:07 by hbutt            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = main.c \
        utils_moves.c \
        utils.c \
        ft_win.c \
+       controls.c \
        finishable.c \
        get_next_line/get_next_line.c \
        get_next_line/get_next_line_utils.c \
